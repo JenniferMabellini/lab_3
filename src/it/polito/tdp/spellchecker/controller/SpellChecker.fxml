@@ -9,8 +9,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111" fx:controller="it.polito.tdp.spellchecker.controller.SpellCheckerController">
+<BorderPane xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.spellchecker.controller.SpellCheckerController">
    <center>
       <VBox BorderPane.alignment="CENTER">
          <children>
@@ -46,7 +45,7 @@
             <TextArea fx:id="txtAreaSotto" />
             <HBox alignment="TOP_RIGHT">
                <children>
-                  <Label fx:id="lblErrori">
+                  <Label fx:id="lblErrori" textAlignment="RIGHT" textFill="#ee1d1d">
                      <HBox.margin>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </HBox.margin>
@@ -58,7 +57,7 @@
                   </Button>
                </children>
             </HBox>
-            <Label fx:id="lblSotto">
+            <Label fx:id="lblSotto" textAlignment="RIGHT">
                <VBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </VBox.margin>

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Dictionary {
+public class DictionaryModel {
 	private List <RichWord> words;
 	private List <String> dizionario;
 	private int errori=0;
@@ -16,7 +16,7 @@ public class Dictionary {
 		return errori;
 	}
 
-	public Dictionary() {
+	public DictionaryModel() {
 		this.words = new ArrayList <RichWord>();
 		this.dizionario= new ArrayList<String>();
 	}
@@ -93,6 +93,8 @@ public class Dictionary {
 		for(String s: inputTextList)
 			if(!dizionario.contains(s))
 			{
+				//uso la classe richword che è una classe javabean. mi creo la parola
+				//qualora questa non sia contenuta nel dizionario e l'aggiungo al mio dizionario
 				RichWord r= new RichWord(s, true);
 				parole.add(r);
 		}

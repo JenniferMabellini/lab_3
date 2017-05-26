@@ -9,7 +9,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import it.polito.tdp.spellchecker.model.Dictionary;
+import it.polito.tdp.spellchecker.model.DictionaryModel;
 import it.polito.tdp.spellchecker.model.RichWord;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -19,7 +19,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 
 public class SpellCheckerController {
-	Dictionary dr;
+	DictionaryModel dr;
 
     @FXML // ResourceBundle that was given to the FXMLLoader
     private ResourceBundle resources;
@@ -57,7 +57,9 @@ public class SpellCheckerController {
     }
     @FXML
     void doChooseLanguage(ActionEvent event) {
-      dr.loadDictionary(cmbBox.getValue());
+    	String language="";
+    	language=cmbBox.getValue();
+      dr.loadDictionary(language);
     }
 
     @FXML
@@ -80,7 +82,7 @@ public class SpellCheckerController {
 		
     	 } 
     	 
-    	 lblErrori.setText("errori"+output.size());
+    	 lblErrori.setText("errori totali: "+output.size());
     	 lblSotto.setText("Spell check completed in "+timefinale+" nanosecondi.");
     	 }
 
@@ -95,8 +97,11 @@ public class SpellCheckerController {
         assert btnClearText != null : "fx:id=\"btnClearText\" was not injected: check your FXML file 'SpellChecker.fxml'.";
         assert lblSotto != null : "fx:id=\"lblSotto\" was not injected: check your FXML file 'SpellChecker.fxml'.";
 
-        dr= new Dictionary();
+        dr= new DictionaryModel();
         cmbBox.getItems().addAll("Italian","English");
+    }
+    public void setModel(DictionaryModel d){
+    	this.dr=d;
     }
 }
 
